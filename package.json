@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "test -d /home/h2-research/htdocs/h2-research.site && rm -rf /home/h2-research/htdocs/h2-research.site/web-app && mkdir -p /home/h2-research/htdocs/h2-research.site/web-app && cp -r dist/. /home/h2-research/htdocs/h2-research.site/web-app/ && find /home/h2-research/htdocs/h2-research.site/web-app -type d -exec chmod 755 {} + && find /home/h2-research/htdocs/h2-research.site/web-app -type f -exec chmod 644 {} + || true"
   },
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
